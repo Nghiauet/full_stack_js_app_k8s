@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Hi! I am a full-stack app!
+        My name to do list app created by duyen
       </header>
       <div className="Grid">
         <div className="Grid-Item">
