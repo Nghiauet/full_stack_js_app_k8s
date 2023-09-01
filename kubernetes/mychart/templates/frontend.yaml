@@ -19,16 +19,4 @@ spec:
         image: valkorion/frontend_2
         ports:
         - containerPort: 3000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: react-service
-spec:
-  type: NodePort # minikube not support LoadBalancer
-  selector:
-    app: frontend
-  ports:
-  - port: 3000
-    targetPort: 3000
-    nodePort: 30000
+
