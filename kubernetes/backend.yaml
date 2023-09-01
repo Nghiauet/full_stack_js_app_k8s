@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: backend
@@ -16,10 +16,14 @@ spec:
     spec:
       containers:
       - name: flask-backend
-        image: backend:latest
-        imagePullPolicy: Never
+        image: valkorion/backend_2
         ports:
         - containerPort: 5000
+        #limit
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         env:
         - name: DATABASE_URI
           value: pg-service

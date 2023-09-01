@@ -5,12 +5,11 @@ from flask import request
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # This keeps the warning messages away
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db_uri = os.environ.get('DATABASE_URI')
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@"+db_uri+"/postgres"
 
-db = SQLAlchemy(app)
-db.init_app(app)
+db = SQLAlchemy(app) # Initialized SQLAlchemy with Flask app once
 
 class Text(db.Model):
     id = db.Column(db.Integer, primary_key=True)

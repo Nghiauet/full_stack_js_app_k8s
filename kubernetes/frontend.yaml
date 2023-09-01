@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: frontend
@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
       - name: react-frontend
-        image: frontend:latest
-        imagePullPolicy: Never
+        image: valkorion/frontend_2
         ports:
         - containerPort: 3000
 ---
